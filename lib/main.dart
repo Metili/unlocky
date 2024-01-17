@@ -56,6 +56,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: Colors.white,
       body: <Widget>[
         /// Home page
         Home(theme: theme),
