@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:unlocky/api/command.dart';
 import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/constains/sizes.dart';
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
-  Home({super.key, required this.theme});
-
-  ThemeData theme;
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,8 @@ class Home extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(15.0, 40.0, 15.0, 20.0),
             padding: const EdgeInsets.all(7),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(60, 202, 201, 201)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(60, 202, 201, 201)),
             child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -187,7 +188,7 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(
                 width: 20.0,
-              ),
+              )
             ],
           ),
         ),

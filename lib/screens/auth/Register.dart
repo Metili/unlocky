@@ -1,47 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:unlocky/api/command.dart';
 import 'package:unlocky/components/TitleU.dart';
 import 'package:unlocky/components/components.dart';
 import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/constains/sizes.dart';
 import 'package:unlocky/constains/text.dart';
-import 'package:http/http.dart' as http;
-import 'package:unlocky/main.dart';
-import 'dart:convert';
+import 'package:unlocky/screens/auth/Login.dart';
 
-import 'package:unlocky/screens/auth/Register.dart';
-import 'package:unlocky/utils/functions.dart';
-
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
-    TextEditingController passwordController = TextEditingController();
+    final _formKey = GlobalKey<FormState>();
+    TextEditingController usernameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController repassController = TextEditingController();
 
-    handleLoging() async {
-      try {
-        //On fait des essais sur les reponses que va nous renvoyer la requette post
-        http.Response response = await CallApi()
-            .login(emailController.text, passwordController.text);
-        // ignore: use_build_context_synchronously
-        checkResponse(
-            context: context,
-            body: response.body,
-            status: response.statusCode,
-            isLoggin: true);
-      } catch (e) {
-        // ignore: use_build_context_synchronously
-        return errorSnackBar(context, constText.serviceError);
-      }
+    handleRegister() {
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => const Welcome()),
+      // );
     }
 
     return Scaffold(
@@ -54,13 +39,47 @@ class _LoginState extends State<Login> {
               Image(image: AssetImage('assets/images/logo.png')),
             ]),
             TitleU(
-                title: "CONNECTEZ-VOUS", size: pageTitle, textColor: secondary),
+                title: "INSCRIVEZ-VOUS", size: pageTitle, textColor: secondary),
             Container(
               margin: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 0.0),
               child: Form(
-                key: formKey,
+                key: _formKey,
                 child: Column(
                   children: [
+                    /* username input */
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Row(
+                          children: [
+                            Text(
+                              "Username",
+                              style:
+                                  TextStyle(color: secondary, fontSize: normal),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "*",
+                              style: TextStyle(
+                                  color: Colors.red, fontSize: normal),
+                            ),
+                          ],
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.text,
+                          controller: usernameController,
+                          validator: (val) =>
+                              val!.isEmpty ? constText.requiredText : null,
+                          decoration: CinputDecoration(
+                              placeholder: "Entrez votre nom d'utilisateur"),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     // Email input
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,14 +148,50 @@ class _LoginState extends State<Login> {
                       ],
                     ),
                     const SizedBox(
+                      height: 10,
+                    ),
+                    /* confirm password */
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Row(
+                          children: [
+                            Text(
+                              "Confirmer le mot de passe",
+                              style:
+                                  TextStyle(color: secondary, fontSize: normal),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "*",
+                              style: TextStyle(
+                                  color: Colors.red, fontSize: normal),
+                            ),
+                          ],
+                        ),
+                        TextFormField(
+                          obscureText: true,
+                          controller: repassController,
+                          validator: (val) =>
+                              repassController.text != passwordController.text
+                                  ? constText.samePassError
+                                  : null,
+                          decoration:
+                              CinputDecoration(placeholder: '************'),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
                       height: 30,
                     ),
                     CElevatedButton(
-                      "Se connecter",
+                      "S'inscrire",
                       () {
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState?.save();
-                          handleLoging();
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState?.save();
+                          handleRegister();
                         }
                       },
                       const EdgeInsets.symmetric(horizontal: 100),
@@ -148,7 +203,7 @@ class _LoginState extends State<Login> {
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
-                                      builder: (context) => const Register()),
+                                      builder: (context) => const Login()),
                                   (route) => false);
                             },
                             child: const Text(

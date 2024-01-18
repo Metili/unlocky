@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/screens/Cadenas.dart';
 import 'package:unlocky/screens/Home.dart';
-import 'package:unlocky/screens/Locaux.dart';
+import 'package:unlocky/screens/SplashScreen.dart';
+import 'package:unlocky/screens/locaux/Locaux.dart';
 import 'package:unlocky/screens/Settings.dart';
 
 /// Flutter code sample for [NavigationBar].
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
-      home: const Welcome(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -59,7 +60,7 @@ class _WelcomeState extends State<Welcome> {
       backgroundColor: Colors.white,
       body: <Widget>[
         /// Home page
-        Home(theme: theme),
+        const Home(),
 
         /// Loacaux page
         Loacaux(theme: theme),
