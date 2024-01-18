@@ -70,7 +70,6 @@ class _WelcomeState extends State<Welcome> {
         /// Settings
         Settings(theme: theme)
       ][currentPageIndex],
-
       bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
             setState(() {

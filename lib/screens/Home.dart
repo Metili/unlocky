@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(15.0, 40.0, 15.0, 20.0),
             padding: const EdgeInsets.all(7),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), color: grey),
+                borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(60, 202, 201, 201)),
             child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,

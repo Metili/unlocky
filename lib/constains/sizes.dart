@@ -1,4 +1,4 @@
-const double normal = 12;
+const double normal =  15.0;
 const double h2 = 24;
 const double pageTitle = 32;
 const double textButtonSize = 18;
@@ -7,3 +7,4 @@ const double iconSize = 30;
 const double homeIconCardSize = 40;
 const double homeTextCardSize = 64;
 const double iconHomeSize = 40;
+const double inputRadius = 15.0;
