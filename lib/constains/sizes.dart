@@ -6,5 +6,5 @@ const double buttonMenuSize = 30;
 const double iconSize = 30;
 const double homeIconCardSize = 40;
 const double homeTextCardSize = 64;
-const double iconHomeSize = 40;
+const double iconHomeSize = 30;
 const double inputRadius = 15.0;

@@ -7,7 +7,6 @@ import 'package:unlocky/constains/sizes.dart';
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
   const Home({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,15 +25,15 @@ class Home extends StatelessWidget {
             ],
           ),
           child: AppBar(
-            leading: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                size: iconHomeSize,
-              ),
-              onPressed: () {
-                // Action à effectuer lorsque l'icône est pressée
-              },
-            ),
+            // leading: IconButton(
+            //   icon: const Icon(
+            //     Icons.menu,
+            //     size: iconHomeSize,
+            //   ),
+            //   onPressed: () {
+            //     // Action à effectuer lorsque l'icône est pressée
+            //   },
+            // ),
             actions: <Widget>[
               IconButton(
                 icon: const Icon(
@@ -64,7 +63,7 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "60",
+                    '60',
                     style: TextStyle(
                         color: primary,
                         fontSize: 30,

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unlocky/constains/colors.dart';
+import 'package:unlocky/constains/logos.dart';
 import 'package:unlocky/constains/sizes.dart';
 import 'package:unlocky/main.dart';
 import 'package:unlocky/screens/auth/Login.dart';
@@ -22,16 +23,12 @@ class _SplashScreenState extends State<SplashScreen> {
     if (token != null) {
       Timer(
         const Duration(seconds: 3),
-        () => Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const Welcome()),
-            (route) => false),
+        () => Navigator.pushNamed(context, '/welcome'),
       );
     } else {
       Timer(
         const Duration(seconds: 3),
-        () => Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const Login()),
-            (route) => false),
+        () => Navigator.pushNamed(context, '/login'),
       );
     }
     // else {
@@ -78,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/logo.png',
+                      Logo.mainLogo,
                       width: 700.0,
                     ),
                     const SizedBox(

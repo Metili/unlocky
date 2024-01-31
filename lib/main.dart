@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:unlocky/components/DrawerU.dart';
 import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/screens/Cadenas.dart';
 import 'package:unlocky/screens/Home.dart';
 import 'package:unlocky/screens/SplashScreen.dart';
+import 'package:unlocky/screens/auth/Login.dart';
+import 'package:unlocky/screens/auth/Register.dart';
+import 'package:unlocky/screens/locaux/AddLocal.dart';
 import 'package:unlocky/screens/locaux/Locaux.dart';
 import 'package:unlocky/screens/Settings.dart';
 
@@ -16,6 +20,17 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home': (context) => const SplashScreen(),
+        '/welcome': (context) => const Welcome(),
+        '/login': (context) => const Login(),
+        '/register': (context) => const Register(),
+        '/location/add': (context) => const AddLocal(),
+        '/location': (context) => const Locaux(),
+        '/lock': (context) => const Cadenas(),
+        '/settings': (context) => const Settings(),
+      },
+      initialRoute: '/home',
       theme: ThemeData(useMaterial3: true),
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
@@ -55,7 +70,7 @@ class _WelcomeState extends State<Welcome> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
+    // final ThemeData theme = Theme.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: <Widget>[
@@ -63,14 +78,16 @@ class _WelcomeState extends State<Welcome> {
         const Home(),
 
         /// Loacaux page
-        Loacaux(theme: theme),
+        const Locaux(),
 
         /// Cadenas page
-        Cadenas(theme: theme),
+        const Cadenas(),
 
         /// Settings
-        Settings(theme: theme)
+        const Settings()
       ][currentPageIndex],
+      drawer: DrawerU(context: context),
+
       bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
             setState(() {

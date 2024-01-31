@@ -4,6 +4,7 @@ import 'package:unlocky/api/command.dart';
 import 'package:unlocky/components/TitleU.dart';
 import 'package:unlocky/components/components.dart';
 import 'package:unlocky/constains/colors.dart';
+import 'package:unlocky/constains/logos.dart';
 import 'package:unlocky/constains/sizes.dart';
 import 'package:unlocky/constains/text.dart';
 import 'package:http/http.dart' as http;
@@ -29,7 +30,7 @@ class _LoginState extends State<Login> {
 
     handleLoging() async {
       try {
-        //On fait des essais sur les reponses que va nous renvoyer la requette post
+        //On fait des essais sur les reponses que va nous renvoyer la requete post
         http.Response response = await CallApi()
             .login(emailController.text, passwordController.text);
         // ignore: use_build_context_synchronously
@@ -51,7 +52,7 @@ class _LoginState extends State<Login> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Image(image: AssetImage('assets/images/logo.png')),
+              Image(image: AssetImage(Logo.mainLogo)),
             ]),
             TitleU(
                 title: "CONNECTEZ-VOUS", size: pageTitle, textColor: secondary),
@@ -146,10 +147,7 @@ class _LoginState extends State<Login> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) => const Register()),
-                                  (route) => false);
+                             Navigator.pushNamed(context, '/register');
                             },
                             child: const Text(
                               "Pas de compte? Enregistrez-vous",

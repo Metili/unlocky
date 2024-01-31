@@ -3,9 +3,7 @@ import 'package:unlocky/screens/auth/Login.dart';
 
 // ignore: must_be_immutable
 class Settings extends StatelessWidget {
-  Settings({super.key, required this.theme});
-
-  ThemeData theme;
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +13,7 @@ class Settings extends StatelessWidget {
       children: [
         ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Login()),
-              );
+              Navigator.pushNamed(context, '/login');
             },
             child: const Text('Login in !'))
       ],

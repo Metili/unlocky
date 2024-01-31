@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unlocky/components/TitleU.dart';
 import 'package:unlocky/components/components.dart';
 import 'package:unlocky/constains/colors.dart';
+import 'package:unlocky/constains/logos.dart';
 import 'package:unlocky/constains/sizes.dart';
 import 'package:unlocky/constains/text.dart';
 import 'package:unlocky/screens/auth/Login.dart';
@@ -36,7 +37,7 @@ class _RegisterState extends State<Register> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Image(image: AssetImage('assets/images/logo.png')),
+              Image(image: AssetImage(Logo.mainLogo)),
             ]),
             TitleU(
                 title: "INSCRIVEZ-VOUS", size: pageTitle, textColor: secondary),
@@ -201,10 +202,7 @@ class _RegisterState extends State<Register> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) => const Login()),
-                                  (route) => false);
+                               Navigator.pushNamed(context, '/login');
                             },
                             child: const Text(
                               "Pas de compte? Enregistrez-vous",
