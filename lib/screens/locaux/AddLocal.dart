@@ -29,7 +29,12 @@ class _AddLocalState extends State<AddLocal> {
     }
 
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: ColorsU.white,
+      appBar: AppBar(
+        leading: IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: const Icon(Icons.arrow_back)),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +43,7 @@ class _AddLocalState extends State<AddLocal> {
               Image(image: AssetImage('assets/images/logo.png')),
             ]),
             TitleU(
-                title: "INSCRIVEZ-VOUS", size: pageTitle, textColor: secondary),
+                title: "AJOUTER UN LOCAL", size: pageTitle, textColor: ColorsU.secondary),
             Container(
               margin: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 0.0),
               child: Form(
@@ -54,7 +59,7 @@ class _AddLocalState extends State<AddLocal> {
                             Text(
                               "Nom du local",
                               style:
-                                  TextStyle(color: secondary, fontSize: normal),
+                                  TextStyle(color: ColorsU.secondary, fontSize: normal),
                             ),
                             SizedBox(
                               width: 5,
@@ -88,7 +93,7 @@ class _AddLocalState extends State<AddLocal> {
                             Text(
                               "Ville",
                               style:
-                                  TextStyle(color: secondary, fontSize: normal),
+                                  TextStyle(color: ColorsU.secondary, fontSize: normal),
                             ),
                             SizedBox(
                               width: 5,
@@ -122,7 +127,7 @@ class _AddLocalState extends State<AddLocal> {
                             Text(
                               "Email",
                               style:
-                                  TextStyle(color: secondary, fontSize: normal),
+                                  TextStyle(color: ColorsU.secondary, fontSize: normal),
                             ),
                             SizedBox(
                               width: 5,

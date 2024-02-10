@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-const Color primary = Color(0xFF43E373);
-const Color secondary = Color(0xFF000000);
-const Color grey = Color.fromARGB(255, 185, 185, 185);
-const Color white = Color(0xFFFFFFFF);
-const Color borderColor = Color(0xFF808080);
+
+class ColorsU {
+  static const Color primary = Color(0xFF43E373);
+  static const Color secondary = Color(0xFF000000);
+  static const Color grey = Color.fromARGB(255, 185, 185, 185);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color listCadColors = Color(0xFFF8F4F4);
+  static const Color borderColor = Color(0xFF808080);
+}

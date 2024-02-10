@@ -5,21 +5,22 @@ import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/constains/sizes.dart';
 
 // ignore: non_constant_identifier_names
-InputDecoration CinputDecoration({placeholder}) {
+InputDecoration CinputDecoration({placeholder, icon}) {
   return InputDecoration(
-    contentPadding: const EdgeInsets.all(10.0),
-    border: OutlineInputBorder(
-        borderSide: const BorderSide(
-          width: 1,
-          color: secondary,
-        ),
-        borderRadius: BorderRadius.circular(10)),
-    hintText: placeholder,
-    hintStyle: const TextStyle(
-      color: grey,
-      fontSize: normal,
-    ),
-  );
+      contentPadding: const EdgeInsets.all(10.0),
+      border: OutlineInputBorder(
+          borderSide: const BorderSide(
+            width: 1,
+            color: ColorsU.secondary,
+          ),
+          borderRadius: BorderRadius.circular(10)),
+      hintText: placeholder,
+      hintStyle: const TextStyle(
+        color: ColorsU.grey,
+        fontSize: normal,
+      ),
+      suffixIcon: icon,
+      );
 }
 
 /* button */
@@ -28,12 +29,12 @@ ElevatedButton CElevatedButton(
     String label, Function onPressed, EdgeInsets padding) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-        foregroundColor: white, backgroundColor: primary, padding: padding),
+        foregroundColor: ColorsU.white, backgroundColor: ColorsU.primary, padding: padding),
     onPressed: () => onPressed(),
     child: Text(
       label,
       style: const TextStyle(
-        color: white,
+        color: ColorsU.white,
         fontWeight: FontWeight.bold,
         fontSize: normal,
       ),

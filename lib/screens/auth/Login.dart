@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
     }
 
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: ColorsU.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
               Image(image: AssetImage(Logo.mainLogo)),
             ]),
             TitleU(
-                title: "CONNECTEZ-VOUS", size: pageTitle, textColor: secondary),
+                title: "CONNECTEZ-VOUS", size: pageTitle, textColor: ColorsU.secondary),
             Container(
               margin: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 0.0),
               child: Form(
@@ -71,7 +71,7 @@ class _LoginState extends State<Login> {
                             Text(
                               "Email",
                               style:
-                                  TextStyle(color: secondary, fontSize: normal),
+                                  TextStyle(color: ColorsU.secondary, fontSize: normal),
                             ),
                             SizedBox(
                               width: 5,
@@ -106,7 +106,7 @@ class _LoginState extends State<Login> {
                             Text(
                               "Mot de passe",
                               style:
-                                  TextStyle(color: secondary, fontSize: normal),
+                                  TextStyle(color: ColorsU.secondary, fontSize: normal),
                             ),
                             SizedBox(
                               width: 5,
@@ -152,7 +152,7 @@ class _LoginState extends State<Login> {
                             child: const Text(
                               "Pas de compte? Enregistrez-vous",
                               style: TextStyle(
-                                  color: secondary,
+                                  color: ColorsU.secondary,
                                   decoration: TextDecoration.underline),
                             ))
                       ],

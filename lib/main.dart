@@ -25,7 +25,7 @@ class MainApp extends StatelessWidget {
         '/welcome': (context) => const Welcome(),
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
-        '/location/add': (context) => const AddLocal(),
+        '/locations/add': (context) => const AddLocal(),
         '/location': (context) => const Locaux(),
         '/lock': (context) => const Cadenas(),
         '/settings': (context) => const Settings(),
@@ -57,6 +57,7 @@ class _WelcomeState extends State<Welcome> {
     const NavigationDestination(
       icon: Icon(Icons.location_pin),
       label: 'Locaux',
+      enabled: true,
     ),
     const NavigationDestination(
       icon: Icon(Icons.lock),
@@ -94,7 +95,7 @@ class _WelcomeState extends State<Welcome> {
               currentPageIndex = index;
             });
           },
-          indicatorColor: primary,
+          indicatorColor: ColorsU.primary,
           selectedIndex: currentPageIndex,
           destinations: destinations),
     );

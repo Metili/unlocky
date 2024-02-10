@@ -82,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       height: 50,
                     ),
                     const CircularProgressIndicator(
-                      color: primary,
+                      color: ColorsU.primary,
                     ),
                   ],
                 ),
@@ -93,7 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Text(
                     "Bienvenue sur Intelligent Unl",
                     style: TextStyle(
-                        color: secondary,
+                        color: ColorsU.secondary,
                         fontSize: h2,
                         fontWeight: FontWeight.bold),
                   ),
@@ -104,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Text(
                     "ck",
                     style: TextStyle(
-                        color: secondary,
+                        color: ColorsU.secondary,
                         fontSize: h2,
                         fontWeight: FontWeight.bold),
                   )

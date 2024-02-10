@@ -7,4 +7,5 @@ const double iconSize = 30;
 const double homeIconCardSize = 40;
 const double homeTextCardSize = 64;
 const double iconHomeSize = 30;
+const double valueList = 40;
 const double inputRadius = 15.0;

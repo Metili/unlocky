@@ -65,20 +65,20 @@ class Home extends StatelessWidget {
                   Text(
                     '60',
                     style: TextStyle(
-                        color: primary,
+                        color: ColorsU.primary,
                         fontSize: 30,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Locaux enregistrés",
                     style: TextStyle(
-                        color: secondary,
+                        color: ColorsU.secondary,
                         fontSize: h2,
                         fontWeight: FontWeight.bold),
                   ),
                   Icon(
                     Icons.chevron_right,
-                    color: secondary,
+                    color: ColorsU.secondary,
                     size: iconSize,
                   )
                 ]),
@@ -101,8 +101,8 @@ class Home extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(0, 5.0, 0, 0),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: white,
-                        border: Border.all(width: 1, color: primary)),
+                        color: ColorsU.white,
+                        border: Border.all(width: 1, color: ColorsU.primary)),
                     height: 170,
                     child: const Column(
                       children: [
@@ -121,7 +121,7 @@ class Home extends StatelessWidget {
                           "40",
                           style: TextStyle(
                               fontSize: 50,
-                              color: secondary,
+                              color: ColorsU.secondary,
                               fontWeight: FontWeight.bold),
                           overflow: TextOverflow
                               .ellipsis, // Tronquer avec des points de suspension
@@ -129,7 +129,7 @@ class Home extends StatelessWidget {
                         ),
                         Text(
                           "Serrure(s)",
-                          style: TextStyle(fontSize: h2, color: secondary),
+                          style: TextStyle(fontSize: h2, color: ColorsU.secondary),
                         )
                       ],
                     ),
@@ -150,8 +150,8 @@ class Home extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(0, 5.0, 0, 0),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: white,
-                        border: Border.all(width: 1, color: secondary)),
+                        color: ColorsU.white,
+                        border: Border.all(width: 1, color: ColorsU.secondary)),
                     height: 170,
                     child: const Column(
                       children: [
@@ -170,7 +170,7 @@ class Home extends StatelessWidget {
                           "40",
                           style: TextStyle(
                               fontSize: 50,
-                              color: primary,
+                              color: ColorsU.primary,
                               fontWeight: FontWeight.bold),
                           overflow: TextOverflow
                               .ellipsis, // Tronquer avec des points de suspension
@@ -178,7 +178,7 @@ class Home extends StatelessWidget {
                         ),
                         Text(
                           "Cadena(s)",
-                          style: TextStyle(fontSize: h2, color: secondary),
+                          style: TextStyle(fontSize: h2, color: ColorsU.secondary),
                         )
                       ],
                     ),
