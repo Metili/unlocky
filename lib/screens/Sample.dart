@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Cadenas extends StatelessWidget {
-  Cadenas({super.key, required this.theme});
+  Cadenas({super.key, required this.theme, required String data, required bool implyLeading});
 
   ThemeData theme;
 

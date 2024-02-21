@@ -66,12 +66,12 @@ Widget DrawerU({context}) {
           title: Text(
             'Locaux',
             style: TextStyle(
-                color: routeName == "/location" ? ColorsU.secondary : null,
+                color: routeName == "/locations" ? ColorsU.secondary : null,
                 fontWeight: FontWeight.bold,
                 fontSize: normal),
           ),
           onTap: () {
-            Navigator.pushNamed(context, '/location');
+            Navigator.pushNamed(context, '/locations');
           },
         ),
         ListTile(
@@ -80,12 +80,12 @@ Widget DrawerU({context}) {
           title: Text(
             'Cadenas',
             style: TextStyle(
-                color: routeName == "/lock" ? ColorsU.secondary : null,
+                color: routeName == "/locks" ? ColorsU.secondary : null,
                 fontWeight: FontWeight.bold,
                 fontSize: normal),
           ),
           onTap: () {
-            Navigator.pushNamed(context, '/lock');
+            Navigator.pushNamed(context, '/locks');
           },
         ),
         ListTile(

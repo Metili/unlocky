@@ -28,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       Timer(
         const Duration(seconds: 3),
-        () => Navigator.pushNamed(context, '/login'),
+        // () => Navigator.pushNamed(context, '/login'),
+        () => Navigator.pushNamed(context, '/welcome'),
       );
     }
     // else {

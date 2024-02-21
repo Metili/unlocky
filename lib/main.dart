@@ -26,8 +26,8 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
         '/locations/add': (context) => const AddLocal(),
-        '/location': (context) => const Locaux(),
-        '/lock': (context) => const Cadenas(),
+        '/locations': (context) => const Locaux(),
+        '/locks': (context) => const Cadenas(),
         '/settings': (context) => const Settings(),
       },
       initialRoute: '/home',
@@ -69,35 +69,39 @@ class _WelcomeState extends State<Welcome> {
     ),
   ];
 
+  final screens = [
+    const Home(),
+    const Locaux(),
+    const Cadenas(),
+    const Settings()
+  ];
   @override
   Widget build(BuildContext context) {
     // final ThemeData theme = Theme.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
-      body: <Widget>[
-        /// Home page
-        const Home(),
-
-        /// Loacaux page
-        const Locaux(),
-
-        /// Cadenas page
-        const Cadenas(),
-
-        /// Settings
-        const Settings()
-      ][currentPageIndex],
+      body: screens[currentPageIndex],
       drawer: DrawerU(context: context),
-
-      bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) {
-            setState(() {
-              currentPageIndex = index;
-            });
-          },
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
           indicatorColor: ColorsU.primary,
+          labelTextStyle: MaterialStateProperty.all(
+            const TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
+          ),
+        ),
+        child: NavigationBar(
+          height: 70,
+          backgroundColor: ColorsU.white,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           selectedIndex: currentPageIndex,
-          destinations: destinations),
+          animationDuration: const Duration(seconds: 2),
+          onDestinationSelected: (currentIndex) =>
+              setState(() => currentPageIndex = currentIndex),
+          destinations: destinations,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

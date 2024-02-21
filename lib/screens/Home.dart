@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unlocky/api/command.dart';
 import 'package:unlocky/constains/colors.dart';
 import 'package:unlocky/constains/sizes.dart';
+import 'package:unlocky/screens/locaux/Locaux.dart';
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
@@ -50,7 +51,8 @@ class Home extends StatelessWidget {
         GestureDetector(
           onTap: () => {
             // ignore: avoid_print
-            print('Container tapped!')
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const Locaux(implyLeading: true)))
           },
           child: Container(
             margin: const EdgeInsets.fromLTRB(15.0, 40.0, 15.0, 20.0),
@@ -129,7 +131,8 @@ class Home extends StatelessWidget {
                         ),
                         Text(
                           "Serrure(s)",
-                          style: TextStyle(fontSize: h2, color: ColorsU.secondary),
+                          style:
+                              TextStyle(fontSize: h2, color: ColorsU.secondary),
                         )
                       ],
                     ),
@@ -178,7 +181,8 @@ class Home extends StatelessWidget {
                         ),
                         Text(
                           "Cadena(s)",
-                          style: TextStyle(fontSize: h2, color: ColorsU.secondary),
+                          style:
+                              TextStyle(fontSize: h2, color: ColorsU.secondary),
                         )
                       ],
                     ),

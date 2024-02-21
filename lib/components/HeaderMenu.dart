@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unlocky/constains/sizes.dart';
 
 // ignore: non_constant_identifier_names
-Widget HeaderMenu({title}) {
+Widget HeaderMenu({title, implyLeading}) {
   return Container(
     decoration: BoxDecoration(
       boxShadow: [
@@ -17,6 +17,7 @@ Widget HeaderMenu({title}) {
     child: AppBar(
       title: title,
       centerTitle: true,
+      automaticallyImplyLeading: implyLeading ?? false,
     ),
   );
 }
